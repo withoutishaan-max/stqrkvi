@@ -6,7 +6,6 @@
   <title>Stqrkvi</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
   <style>
@@ -15,13 +14,13 @@
       position: fixed;
       inset: 0;
       backdrop-filter: blur(15px);
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 9999;
       cursor: pointer;
-      transition: opacity 0.6s ease;
+      transition: opacity 0.8s ease;
     }
 
     #enter-screen.hide {
@@ -31,8 +30,8 @@
 
     /* GLOW TEXT */
     .enter-text {
-      font-size: 40px;
-      letter-spacing: 4px;
+      font-size: 42px;
+      letter-spacing: 5px;
       color: white;
       text-shadow: 
         0 0 10px white,
@@ -62,10 +61,8 @@
     <source src="bg.mp4" type="video/mp4">
   </video>
 
-  <!-- DARK OVERLAY -->
   <div class="overlay"></div>
 
-  <!-- CARD -->
   <div class="card">
 
     <img class="pfp" src="ear2.webp" alt="Stqrkvi">
@@ -92,7 +89,7 @@
 
   </div>
 
-  <!-- NEW BACKGROUND MUSIC -->
+  <!-- MUSIC -->
   <audio id="bg-music" loop>
     <source src="newsong.mp3" type="audio/mpeg">
   </audio>
@@ -101,11 +98,26 @@
     const enterScreen = document.getElementById("enter-screen");
     const music = document.getElementById("bg-music");
 
-    music.volume = 0.4;
+    music.volume = 0;
 
     enterScreen.addEventListener("click", () => {
+
+      // Hide enter screen
       enterScreen.classList.add("hide");
+
+      // Play music
       music.play();
+
+      // Smooth volume fade-in
+      let vol = 0;
+      const fade = setInterval(() => {
+        if (vol < 0.4) {
+          vol += 0.02;
+          music.volume = vol;
+        } else {
+          clearInterval(fade);
+        }
+      }, 100);
     });
   </script>
 
