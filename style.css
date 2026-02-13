@@ -107,17 +107,7 @@ footer {
 /* VISIT COUNTER (BOTTOM LEFT) */
 /* ========================= */
 
-.views-fixed {
-  position: fixed;
-  bottom: 18px;
-  left: 20px;
-  z-index: 3;
-  font-size: 13px;
-  opacity: 0.8;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: white;
-}
+
+
 
 
