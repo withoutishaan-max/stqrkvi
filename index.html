@@ -28,16 +28,16 @@
       pointer-events: none;
     }
 
-    /* GLOW TEXT */
+    /* SMALL CENTER GLOW TEXT */
     .enter-text {
-      font-size: 42px;
-      letter-spacing: 5px;
+      font-size: 26px; /* chota size */
+      letter-spacing: 3px;
       color: white;
+      text-align: center;
       text-shadow: 
-        0 0 10px white,
-        0 0 20px white,
-        0 0 40px white,
-        0 0 80px white;
+        0 0 8px white,
+        0 0 16px white,
+        0 0 32px white;
       animation: pulse 2s infinite;
     }
 
@@ -53,7 +53,7 @@
 
   <!-- ENTER SCREEN -->
   <div id="enter-screen">
-    <div class="enter-text">PRESS TO ENTER</div>
+    <div class="enter-text">Click to enter</div>
   </div>
 
   <!-- VIDEO BACKGROUND -->
@@ -102,13 +102,10 @@
 
     enterScreen.addEventListener("click", () => {
 
-      // Hide enter screen
       enterScreen.classList.add("hide");
 
-      // Play music
       music.play();
 
-      // Smooth volume fade-in
       let vol = 0;
       const fade = setInterval(() => {
         if (vol < 0.4) {
