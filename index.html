@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>stqrkvi</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome for eye icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -19,14 +22,20 @@
   <!-- CARD -->
   <div class="card">
 
-    <!-- PFP (IMG TAG AS YOU ASKED) -->
+    <!-- PFP -->
     <img
       class="pfp"
-      src="https://scontent.fdel15-1.fna.fbcdn.net/v/t1.15752-9/629421743_2417057322056708_8957735061971060941_n.webp?_nc_cat=110&ccb=1-7&_nc_sid=fc17b8&efg=eyJxZV9ncm91cHMiOlsiaWdkX2Jlc3RfZWZmb3J0X2ltYWdlOmNvbnRyb2wiXX0%3D&_nc_ohc=nIF-Fug-t9UQ7kNvwGYlZw1&_nc_oc=AdmNYLmAeH4YaD38aZBmcFTz51c_jnfyjMjxiS3Brc53zFqZWJu1MVaXKaJzKmHbm9k&_nc_zt=23&_nc_ht=scontent.fdel15-1.fna&oh=03_Q7cD4gEXM59JA1Gr8I0fa5H46mRfn70o5p57HrH1qmdeWG66EQ&oe=69B67A13"
+      src="https://scontent.fdel15-1.fna.fbcdn.net/..."
       alt="stqrkvi"
     >
 
     <h1 class="name">stqrkvi</h1>
+
+    <!-- 👁 VISIT COUNTER -->
+    <div class="views">
+      <i class="fa-solid fa-eye"></i>
+      <span id="visit-count">Loading...</span>
+    </div>
 
     <p class="about">
       Calm mind. Sharp vision.<br>
@@ -48,9 +57,14 @@
 
   </div>
 
+  <!-- VISIT SCRIPT -->
+  <script>
+    fetch("https://api.countapi.xyz/hit/stqrkvi-profile-2025/views")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("visit-count").innerText = data.value;
+      });
+  </script>
+
 </body>
 </html>
-
-
-
-
