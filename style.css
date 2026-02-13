@@ -97,23 +97,17 @@ body {
   font-weight: bold;
 }
 
+/* SPOTIFY BUTTON - SAME AS INSTAGRAM */
 .spotify {
-  display: inline-block;
-  margin-top: 20px; /* Instagram se thoda niche */
-  padding: 18px 60px;
-  border-radius: 50px;
+  display: block;               /* Full width like Instagram */
+  margin-top: 16px;              /* Space below Instagram */
+  padding: 14px;                 /* Same padding */
+  border-radius: 18px;           /* Same shape */
   text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
   color: white;
-  background: #1DB954;
-  transition: 0.3s ease;
-  box-shadow: 0 0 25px #1DB954;
-}
-
-.spotify:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 50px #1DB954;
+  background: #1DB954;           /* Spotify green */
+  box-shadow: 0 0 40px rgba(30,215,96,0.9);
+  font-weight: bold;
 }
 
 
@@ -126,6 +120,7 @@ footer {
 /* ========================= */
 /* VISIT COUNTER (BOTTOM LEFT) */
 /* ========================= */
+
 
 
 
