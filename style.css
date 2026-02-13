@@ -46,7 +46,7 @@ body {
   box-shadow: 0 30px 100px rgba(0,0,0,0.9);
 }
 
-/* PFP (IMG) */
+/* PFP */
 .pfp {
   width: 120px;
   height: 120px;
@@ -101,4 +101,21 @@ footer {
   margin-top: 16px;
   font-size: 11px;
   opacity: 0.6;
+}
+
+/* ========================= */
+/* VISIT COUNTER (BOTTOM LEFT) */
+/* ========================= */
+
+.views-fixed {
+  position: fixed;
+  bottom: 18px;
+  left: 20px;
+  z-index: 3;
+  font-size: 13px;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
 }
