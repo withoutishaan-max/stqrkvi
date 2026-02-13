@@ -85,48 +85,52 @@ body {
   font-size: 12px;
 }
 
-/* INSTAGRAM BUTTON */
-.insta {
+/* ========================= */
+/* BUTTON BASE STYLE */
+/* ========================= */
+
+.insta,
+.spotify {
   display: block;
   margin-top: 16px;
   padding: 14px;
   border-radius: 18px;
   text-decoration: none;
   color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* INSTAGRAM */
+.insta {
   background: linear-gradient(135deg, #ff5fa2, #ff2f7a);
   box-shadow: 0 0 40px rgba(255,80,150,0.9);
-  font-weight: bold;
 }
 
-/* SPOTIFY BUTTON - SAME AS INSTAGRAM */
+.insta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(255,80,150,1);
+}
+
+/* SPOTIFY */
 .spotify {
-  display: block;               /* Full width like Instagram */
-  margin-top: 16px;              /* Space below Instagram */
-  padding: 14px;                 /* Same padding */
-  border-radius: 18px;           /* Same shape */
-  text-decoration: none;
-  color: white;
-  background: #1DB954;           /* Spotify green */
+  background: #1DB954;
   box-shadow: 0 0 40px rgba(30,215,96,0.9);
-  font-weight: bold;
 }
 
+.spotify:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(30,215,96,1);
+}
+
+/* ICON SPACING */
+.insta i,
+.spotify i {
+  margin-right: 8px;
+}
 
 footer {
   margin-top: 16px;
   font-size: 11px;
   opacity: 0.6;
 }
-
-/* ========================= */
-/* VISIT COUNTER (BOTTOM LEFT) */
-/* ========================= */
-
-
-
-
-
-
-
-
-
