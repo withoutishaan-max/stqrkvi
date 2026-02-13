@@ -99,21 +99,23 @@ body {
 
 .spotify {
   display: inline-block;
-  margin-top: 15px;
-  padding: 12px 35px;
+  margin-top: 20px; /* Instagram se thoda niche */
+  padding: 18px 60px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 18px;
   color: white;
   background: #1DB954;
   transition: 0.3s ease;
-  box-shadow: 0 0 20px #1DB954;
+  box-shadow: 0 0 25px #1DB954;
 }
 
 .spotify:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 40px #1DB954;
+  box-shadow: 0 0 50px #1DB954;
 }
+
 
 footer {
   margin-top: 16px;
@@ -124,6 +126,7 @@ footer {
 /* ========================= */
 /* VISIT COUNTER (BOTTOM LEFT) */
 /* ========================= */
+
 
 
 
