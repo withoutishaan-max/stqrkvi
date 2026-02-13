@@ -42,7 +42,7 @@ body {
   border-radius: 26px;
   text-align: center;
   background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(16px);
+  backdrop-filter: none;
   box-shadow: 0 30px 100px rgba(0,0,0,0.9);
 }
 
@@ -134,3 +134,4 @@ footer {
   font-size: 11px;
   opacity: 0.6;
 }
+
