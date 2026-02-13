@@ -6,7 +6,7 @@
   <title>stqrkvi</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- Font Awesome (for eye icon) -->
+  <!-- Font Awesome for eye icon -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -22,7 +22,7 @@
   <!-- CARD -->
   <div class="card">
 
-    <!-- PFP FIXED -->
+    <!-- PFP FIX -->
     <img class="pfp" src="ear2.webp" alt="stqrkvi">
 
     <h1 class="name">stqrkvi</h1>
@@ -50,15 +50,21 @@
   <!-- VISIT COUNTER (BOTTOM LEFT) -->
   <div class="views-fixed">
     <i class="fa-solid fa-eye"></i>
-    <span id="visit-count">Loading...</span>
+    <span id="visit-count">0</span>
   </div>
 
-  <!-- VISIT SCRIPT -->
+  <!-- WORKING COUNTER SCRIPT -->
   <script>
-    fetch("https://api.countapi.xyz/hit/stqrkvi-2026-profile/views")
-      .then(response => response.json())
+    const namespace = "stqrkvi-profile-2026";
+    const key = "views";
+
+    fetch(`https://api.countapi.xyz/update/${namespace}/${key}?amount=1`)
+      .then(res => res.json())
       .then(data => {
         document.getElementById("visit-count").innerText = data.value;
+      })
+      .catch(() => {
+        document.getElementById("visit-count").innerText = "0";
       });
   </script>
 
