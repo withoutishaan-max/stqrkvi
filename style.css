@@ -97,6 +97,24 @@ body {
   font-weight: bold;
 }
 
+.spotify {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background: #1DB954;
+  transition: 0.3s ease;
+  box-shadow: 0 0 20px #1DB954;
+}
+
+.spotify:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #1DB954;
+}
+
 footer {
   margin-top: 16px;
   font-size: 11px;
@@ -106,6 +124,7 @@ footer {
 /* ========================= */
 /* VISIT COUNTER (BOTTOM LEFT) */
 /* ========================= */
+
 
 
 
