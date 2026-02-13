@@ -47,26 +47,8 @@
 
   </div>
 
-  <!-- VISIT COUNTER (BOTTOM LEFT) -->
-  <div class="views-fixed">
-    <i class="fa-solid fa-eye"></i>
-    <span id="visit-count">0</span>
-  </div>
 
-  <!-- WORKING COUNTER SCRIPT -->
-  <script>
-    const namespace = "stqrkvi-profile-2026";
-    const key = "views";
-
-    fetch(`https://api.countapi.xyz/update/${namespace}/${key}?amount=1`)
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("visit-count").innerText = data.value;
-      })
-      .catch(() => {
-        document.getElementById("visit-count").innerText = "0";
-      });
-  </script>
 
 </body>
 </html>
+
