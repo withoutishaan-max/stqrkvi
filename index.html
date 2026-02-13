@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>stqrkvi</title>
+  <title>Stqrkvi</title>
   <link rel="stylesheet" href="style.css">
 
   <!-- Font Awesome -->
@@ -23,12 +23,10 @@
   <div class="card">
 
     <!-- PFP -->
-    <img class="pfp" src="ear2.webp" alt="stqrkvi">
+    <img class="pfp" src="ear2.webp" alt="Stqrkvi">
 
-    <h1 class="name">stqrkvi</h1>
-
-    <!-- 17 added below name -->
-    <h2 class="age">17</h2>
+    <!-- NAME + AGE SAME LINE -->
+    <h1 class="name">Stqrkvi, 17</h1>
 
     <p class="about">
       Calm mind. Sharp vision.<br>
@@ -50,8 +48,8 @@
 
   </div>
 
-  <!-- HIDDEN AUTO PLAY MUSIC -->
-  <audio id="bg-music" loop>
+  <!-- AUTO PLAY BACKGROUND MUSIC -->
+  <audio id="bg-music" autoplay loop>
     <source src="song.mp3" type="audio/mpeg">
   </audio>
 
@@ -59,12 +57,14 @@
     const music = document.getElementById("bg-music");
     music.volume = 0.4;
 
-    function startMusic() {
-      music.play().catch(() => {});
-      document.removeEventListener("click", startMusic);
-    }
-
-    document.addEventListener("click", startMusic);
+    // Force play on load (browser safe attempt)
+    window.addEventListener("load", () => {
+      music.play().catch(() => {
+        document.addEventListener("click", () => {
+          music.play();
+        }, { once: true });
+      });
+    });
   </script>
 
 </body>
