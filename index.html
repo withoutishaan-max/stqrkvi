@@ -9,7 +9,6 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
   <style>
-    /* ENTER SCREEN */
     #enter-screen {
       position: fixed;
       inset: 0;
@@ -46,17 +45,7 @@
       100% { opacity: 1; }
     }
 
-    /* VIDEO BACKGROUND */
-    .bg-video {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    /* IMAGE BACKGROUND */
+    .bg-video,
     .bg-image {
       position: fixed;
       inset: 0;
@@ -64,6 +53,9 @@
       height: 100%;
       object-fit: cover;
       z-index: -2;
+    }
+
+    .bg-image {
       animation: zoom 20s infinite alternate ease-in-out;
     }
 
@@ -71,29 +63,26 @@
       from { transform: scale(1); }
       to { transform: scale(1.1); }
     }
-
   </style>
 
 </head>
 <body>
 
-  <!-- ENTER SCREEN -->
   <div id="enter-screen">
     <div class="enter-text">Click to enter</div>
   </div>
 
-  <!-- VIDEO BACKGROUND -->
+  <!-- VIDEO (Auto hidden) -->
   <video class="bg-video" autoplay muted loop playsinline>
     <source src="bg.mp4" type="video/mp4">
   </video>
 
-  <!-- IMAGE BACKGROUND -->
+  <!-- IMAGE (Active) -->
   <img src="bg.png" class="bg-image" alt="background">
 
   <div class="overlay"></div>
 
   <div class="card">
-
     <img class="pfp" src="ear2.webp" alt="Stqrkvi">
 
     <h1 class="name">Stqrkvi, 17</h1>
@@ -115,10 +104,8 @@
     </a>
 
     <footer>God's Chosen Emperor</footer>
-
   </div>
 
-  <!-- MUSIC -->
   <audio id="bg-music" loop>
     <source src="newsong.mp3" type="audio/mpeg">
   </audio>
@@ -127,8 +114,8 @@
   const enterScreen = document.getElementById("enter-screen");
   const music = document.getElementById("bg-music");
 
-  // 🔥 BACKGROUND CONTROL
-  const useVideo = true; // TRUE = Video | FALSE = Image
+  // 🔥 IMAGE MODE ACTIVE
+  const useVideo = false;
 
   const video = document.querySelector(".bg-video");
   const image = document.querySelector(".bg-image");
@@ -142,9 +129,7 @@
   music.volume = 0;
 
   enterScreen.addEventListener("click", () => {
-
     enterScreen.classList.add("hide");
-
     music.play();
 
     let vol = 0;
@@ -153,7 +138,6 @@
         vol += 0.05;
         music.volume = vol;
       } else {
-        music.volume = 1.0;
         clearInterval(fade);
       }
     }, 100);
@@ -162,4 +146,3 @@
 
 </body>
 </html>
-
