@@ -62,7 +62,7 @@
       z-index: -2;
     }
 
-    /* 🐍 SNAKE WRAP EFFECT */
+    /* 🐍 REAL SNAKE WRAP */
     .snake-wrap {
       position: relative;
       display: inline-block;
@@ -73,24 +73,21 @@
       z-index: 2;
     }
 
-    .snake-svg {
+    .real-snake {
       position: absolute;
-      top: -20px;
-      left: -15px;
-      width: 115%;
-      height: 120%;
+      width: 180px;
+      top: -95px;
+      left: -65px;
       z-index: 1;
-      filter: drop-shadow(0 0 10px #00ff88);
+      pointer-events: none;
+      animation: snakeFloat 4s ease-in-out infinite;
+      filter: drop-shadow(0 0 18px rgba(0,255,136,0.6));
     }
 
-    .snake-svg path {
-      animation: slither 3s ease-in-out infinite;
-    }
-
-    @keyframes slither {
-      0% { stroke-dashoffset: 400; }
-      50% { stroke-dashoffset: 0; }
-      100% { stroke-dashoffset: 400; }
+    @keyframes snakeFloat {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
     }
   </style>
 </head>
@@ -112,26 +109,11 @@
   <div class="card">
     <img class="pfp" src="ear2.webp" alt="Stqrkvi">
 
-    <!-- NAME WITH WRAPPING SNAKE -->
-<h1 class="name snake-wrap">
-  <span class="text">Stqrkvi, 17</span>
-
-  <svg class="snake-svg" viewBox="0 0 400 120">
-    <!-- Snake Body -->
-    <path d="M20 80 
-             C 80 20, 150 110, 220 40
-             S 340 90, 380 60"
-          fill="none"
-          stroke="#00ff88"
-          stroke-width="6"
-          stroke-linecap="round"
-          stroke-dasharray="600"
-          stroke-dashoffset="600" />
-
-    <!-- Snake Head -->
-    <circle cx="380" cy="60" r="8" fill="#00ff88" />
-  </svg>
-</h1>
+    <!-- NAME + REAL SNAKE -->
+    <h1 class="name snake-wrap">
+      <span class="text">Stqrkvi, 17</span>
+      <img src="snake.png" class="real-snake" alt="snake">
+    </h1>
 
     <p class="about">
       <br>
@@ -194,4 +176,3 @@
 
 </body>
 </html>
-
