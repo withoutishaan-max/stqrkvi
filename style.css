@@ -61,6 +61,7 @@ body {
 .name {
   font-size: 24px;
   margin-bottom: 6px;
+  position: relative;
 }
 
 .about {
@@ -135,21 +136,36 @@ footer {
   opacity: 0.6;
 }
 
-.snake {
+/* ========================= */
+/* 🐍 SNAKE WRAP EFFECT */
+/* ========================= */
+
+.snake-wrap {
+  position: relative;
   display: inline-block;
-  margin-left: 4px;
-  animation: snakeMove 2s infinite ease-in-out;
-  text-shadow:
-    0 0 6px #00ff88,
-    0 0 14px #00ff88,
-    0 0 28px #00ff88;
 }
 
-@keyframes snakeMove {
-  0% { transform: rotate(0deg) translateY(0px); }
-  25% { transform: rotate(10deg) translateY(-2px); }
-  50% { transform: rotate(0deg) translateY(0px); }
-  75% { transform: rotate(-10deg) translateY(-2px); }
-  100% { transform: rotate(0deg) translateY(0px); }
+.snake-wrap .text {
+  position: relative;
+  z-index: 2;
 }
 
+.snake-svg {
+  position: absolute;
+  top: -20px;
+  left: -15px;
+  width: 115%;
+  height: 120%;
+  z-index: 1;
+  filter: drop-shadow(0 0 10px #00ff88);
+}
+
+.snake-svg path {
+  animation: slither 3s ease-in-out infinite;
+}
+
+@keyframes slither {
+  0% { stroke-dashoffset: 400; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 400; }
+}
