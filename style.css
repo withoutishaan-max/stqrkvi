@@ -42,11 +42,10 @@ body {
   border-radius: 26px;
   text-align: center;
   background: rgba(0,0,0,0.45);
-  backdrop-filter: none;
   box-shadow: 0 30px 100px rgba(0,0,0,0.9);
 }
 
-/* PFP */
+/* PROFILE PIC */
 .pfp {
   width: 120px;
   height: 120px;
@@ -57,13 +56,46 @@ body {
   border: 3px solid rgba(255,255,255,0.4);
 }
 
-/* TEXT */
+/* NAME */
 .name {
   font-size: 24px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   position: relative;
 }
 
+/* ========================= */
+/* 🐍 REAL SNAKE WRAP */
+/* ========================= */
+
+.snake-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.snake-wrap .text {
+  position: relative;
+  z-index: 2;
+}
+
+/* REAL SNAKE IMAGE */
+.real-snake {
+  position: absolute;
+  width: 170px;
+  top: -85px;
+  left: -55px;
+  z-index: 1;
+  pointer-events: none;
+  animation: snakeFloat 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(0,255,136,0.7));
+}
+
+@keyframes snakeFloat {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-6px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* ABOUT */
 .about {
   font-size: 14px;
   opacity: 0.9;
@@ -86,10 +118,7 @@ body {
   font-size: 12px;
 }
 
-/* ========================= */
-/* BUTTON BASE STYLE */
-/* ========================= */
-
+/* BUTTONS */
 .insta,
 .spotify {
   display: block;
@@ -124,7 +153,6 @@ body {
   box-shadow: 0 0 60px rgba(30,215,96,1);
 }
 
-/* ICON SPACING */
 .insta i,
 .spotify i {
   margin-right: 8px;
@@ -137,37 +165,13 @@ footer {
 }
 
 /* ========================= */
-/* 🐍 SNAKE WRAP EFFECT */
+/* 📱 MOBILE FIX */
 /* ========================= */
 
-.snake-wrap {
-  position: relative;
-  display: inline-block;
+@media (max-width: 480px) {
+  .real-snake {
+    width: 140px;
+    top: -70px;
+    left: -40px;
+  }
 }
-
-.snake-wrap .text {
-  position: relative;
-  z-index: 2;
-}
-
-.snake-svg {
-  position: absolute;
-  top: -40px;
-  left: -40px;
-  width: 140%;
-  height: 160%;
-  z-index: 1;
-  filter: drop-shadow(0 0 12px #00ff88);
-}
-
-.snake-svg path {
-  animation: slither 3s ease-in-out infinite;
-}
-
-@keyframes slither {
-  0% { stroke-dashoffset: 600; }
-  50% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: 600; }
-}
-
-
