@@ -61,34 +61,6 @@
       object-fit: cover;
       z-index: -2;
     }
-
-    /* 🐍 REAL SNAKE WRAP */
-    .snake-wrap {
-      position: relative;
-      display: inline-block;
-    }
-
-    .snake-wrap .text {
-      position: relative;
-      z-index: 2;
-    }
-
-    .real-snake {
-      position: absolute;
-      width: 180px;
-      top: -95px;
-      left: -65px;
-      z-index: 1;
-      pointer-events: none;
-      animation: snakeFloat 4s ease-in-out infinite;
-      filter: drop-shadow(0 0 18px rgba(0,255,136,0.6));
-    }
-
-    @keyframes snakeFloat {
-      0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(2deg); }
-      100% { transform: translateY(0px) rotate(0deg); }
-    }
   </style>
 </head>
 
@@ -109,11 +81,8 @@
   <div class="card">
     <img class="pfp" src="ear2.webp" alt="Stqrkvi">
 
-    <!-- NAME + REAL SNAKE -->
-    <h1 class="name snake-wrap">
-      <span class="text">Stqrkvi, 17</span>
-      <img src="snake.png" class="real-snake" alt="snake">
-    </h1>
+    <!-- SIMPLE NAME -->
+    <h1 class="name">Stqrkvi, 17</h1>
 
     <p class="about">
       <br>
@@ -121,10 +90,10 @@
     </p>
 
     <div class="skills">
-      <span> sᴍᴀʀᴛ </span>
-      <span> ᴀᴇsᴛʜᴇᴛɪᴄ </span>
-      <span> ɢᴇɴɪᴜs </span>
-      <span> ᴄʀᴇᴀᴛɪᴠᴇ ᴇᴅɪᴛɪɴɢ </span>
+      <span>sᴍᴀʀᴛ</span>
+      <span>ᴀᴇsᴛʜᴇᴛɪᴄ</span>
+      <span>ɢᴇɴɪᴜs</span>
+      <span>ᴄʀᴇᴀᴛɪᴠᴇ ᴇᴅɪᴛɪɴɢ</span>
     </div>
 
     <a class="insta" href="https://www.instagram.com/stqrkvi/" target="_blank">
