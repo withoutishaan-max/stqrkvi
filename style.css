@@ -63,38 +63,6 @@ body {
   position: relative;
 }
 
-/* ========================= */
-/* 🐍 REAL SNAKE WRAP */
-/* ========================= */
-
-.snake-wrap {
-  position: relative;
-  display: inline-block;
-}
-
-.snake-wrap .text {
-  position: relative;
-  z-index: 2;
-}
-
-/* REAL SNAKE IMAGE */
-.real-snake {
-  position: absolute;
-  width: 170px;
-  top: -85px;
-  left: -55px;
-  z-index: 1;
-  pointer-events: none;
-  animation: snakeFloat 4s ease-in-out infinite;
-  filter: drop-shadow(0 0 20px rgba(0,255,136,0.7));
-}
-
-@keyframes snakeFloat {
-  0%   { transform: translateY(0px) rotate(0deg); }
-  50%  { transform: translateY(-6px) rotate(2deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
-}
-
 /* ABOUT */
 .about {
   font-size: 14px;
@@ -175,3 +143,4 @@ footer {
     left: -40px;
   }
 }
+
