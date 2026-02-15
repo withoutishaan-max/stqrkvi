@@ -62,23 +62,35 @@
       z-index: -2;
     }
 
-    /* 🐍 Animated Snake */
-    .snake {
+    /* 🐍 SNAKE WRAP EFFECT */
+    .snake-wrap {
+      position: relative;
       display: inline-block;
-      margin-left: 4px;
-      animation: snakeMove 2s infinite ease-in-out;
-      text-shadow:
-        0 0 6px #00ff88,
-        0 0 14px #00ff88,
-        0 0 28px #00ff88;
     }
 
-    @keyframes snakeMove {
-      0% { transform: rotate(0deg) translateY(0px); }
-      25% { transform: rotate(10deg) translateY(-2px); }
-      50% { transform: rotate(0deg) translateY(0px); }
-      75% { transform: rotate(-10deg) translateY(-2px); }
-      100% { transform: rotate(0deg) translateY(0px); }
+    .snake-wrap .text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .snake-svg {
+      position: absolute;
+      top: -20px;
+      left: -15px;
+      width: 115%;
+      height: 120%;
+      z-index: 1;
+      filter: drop-shadow(0 0 10px #00ff88);
+    }
+
+    .snake-svg path {
+      animation: slither 3s ease-in-out infinite;
+    }
+
+    @keyframes slither {
+      0% { stroke-dashoffset: 400; }
+      50% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 400; }
     }
   </style>
 </head>
@@ -100,8 +112,23 @@
   <div class="card">
     <img class="pfp" src="ear2.webp" alt="Stqrkvi">
 
-    <h1 class="name">
-      Stqrkvi <span class="snake">🐍</span>, 17
+    <!-- NAME WITH WRAPPING SNAKE -->
+    <h1 class="name snake-wrap">
+      <span class="text">Stqrkvi, 17</span>
+
+      <svg class="snake-svg" viewBox="0 0 300 80">
+        <path d="M10 50 
+                 Q 60 10, 120 40 
+                 T 230 30 
+                 T 290 45"
+              fill="none"
+              stroke="#00ff88"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-dasharray="400"
+              stroke-dashoffset="400">
+        </path>
+      </svg>
     </h1>
 
     <p class="about">
@@ -120,7 +147,7 @@
       <i class="fa-brands fa-instagram"></i> Instagram
     </a>
     
-    <a class="spotify" href="https://open.spotify.com/user/31fnxoj77waallplwrzoiyhuh7mi?si=b844d3c32e2d4e98&nd=1&dlsi=a5f1f81fb53645b6" target="_blank">
+    <a class="spotify" href="https://open.spotify.com/user/31fnxoj77waallplwrzoiyhuh7mi" target="_blank">
       <i class="fa-brands fa-spotify"></i> Spotify
     </a>
 
