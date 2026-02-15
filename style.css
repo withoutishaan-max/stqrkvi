@@ -152,12 +152,12 @@ footer {
 
 .snake-svg {
   position: absolute;
-  top: -20px;
-  left: -15px;
-  width: 115%;
-  height: 120%;
+  top: -40px;
+  left: -40px;
+  width: 140%;
+  height: 160%;
   z-index: 1;
-  filter: drop-shadow(0 0 10px #00ff88);
+  filter: drop-shadow(0 0 12px #00ff88);
 }
 
 .snake-svg path {
@@ -165,7 +165,9 @@ footer {
 }
 
 @keyframes slither {
-  0% { stroke-dashoffset: 400; }
+  0% { stroke-dashoffset: 600; }
   50% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: 400; }
+  100% { stroke-dashoffset: 600; }
 }
+
+
