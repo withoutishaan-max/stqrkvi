@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stqrkvi</title>
 
-  <!-- Open Graph Meta Tags -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Stqrkvi🐍" />
   <meta property="og:description" content="Be a man, not a bastard." />
   <meta property="og:image" content="https://stqrkvi.lol/ear2.webp" />
   <meta property="og:url" content="https://stqrkvi.lol/" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter / Discord Preview -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://stqrkvi.lol/ear2.webp">
 
@@ -43,10 +42,7 @@
       letter-spacing: 3px;
       color: white;
       text-align: center;
-      text-shadow: 
-        0 0 8px white,
-        0 0 16px white,
-        0 0 32px white;
+      text-shadow: 0 0 8px white, 0 0 16px white, 0 0 32px white;
       animation: pulse 2s infinite;
     }
 
@@ -65,9 +61,28 @@
       object-fit: cover;
       z-index: -2;
     }
-  </style>
 
+    /* 🐍 Animated Snake */
+    .snake {
+      display: inline-block;
+      margin-left: 4px;
+      animation: snakeMove 2s infinite ease-in-out;
+      text-shadow:
+        0 0 6px #00ff88,
+        0 0 14px #00ff88,
+        0 0 28px #00ff88;
+    }
+
+    @keyframes snakeMove {
+      0% { transform: rotate(0deg) translateY(0px); }
+      25% { transform: rotate(10deg) translateY(-2px); }
+      50% { transform: rotate(0deg) translateY(0px); }
+      75% { transform: rotate(-10deg) translateY(-2px); }
+      100% { transform: rotate(0deg) translateY(0px); }
+    }
+  </style>
 </head>
+
 <body>
 
   <div id="enter-screen">
@@ -85,7 +100,9 @@
   <div class="card">
     <img class="pfp" src="ear2.webp" alt="Stqrkvi">
 
-    <h1 class="name">Stqrkvi🐍, 17</h1>
+    <h1 class="name">
+      Stqrkvi <span class="snake">🐍</span>, 17
+    </h1>
 
     <p class="about">
       <br>
@@ -119,7 +136,6 @@
   const music = document.getElementById("bg-music");
 
   const useVideo = true;
-
   const video = document.querySelector(".bg-video");
   const image = document.querySelector(".bg-image");
 
