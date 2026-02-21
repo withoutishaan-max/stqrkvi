@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIKOLA</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Background Video -->
+<video autoplay muted loop playsinline>
+    <source src="newbg.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<!-- Banner -->
+<div class="banner"></div>
+
+<!-- Profile Section -->
+<div class="profile">
+    <img src="psp.jpg" alt="Profile Picture">
+    <h1>NIKOLA</h1>
+</div>
+
+<!-- Quote Section -->
+<div class="quote">
+    <h2>
+        Be a man of your word, whatever you say you might follow it.
+    </h2>
+    <p>
+        Knowledge is above anything in the world whether it's love.
+    </p>
+</div>
+
+<!-- Contact Line -->
+<div class="contact-line">
+    <p>
+        Open for advice, collaborations & business inquiries — connect with me through my socials below.
+    </p>
+</div>
+
+<!-- Instagram Counter -->
+<div class="insta-counter">
+    <h3>Instagram Followers</h3>
+    <p><span id="followers">0</span>+</p>
+</div>
+
+<!-- Social Links -->
+<div class="socials">
+    <a href="https://www.instagram.com/yourzz_himanshu/" target="_blank">Instagram</a>
+    <a href="https://discord.com/users/1400824591496253460" target="_blank">Discord</a>
+    <a href="https://github.com/" target="_blank">GitHub</a>
+    <a href="#">Other</a>
+</div>
+
+<footer>
+    © 2026 NIKOLA — All Rights Reserved ⚡
+</footer>
+
+<!-- Counter Script -->
+<script>
+let count = 74; // 🔥 Yaha apna real follower number daal do
+let current = 0;
+let speed = 20;
+
+let counter = document.getElementById("followers");
+
+let update = setInterval(() => {
+    current += Math.ceil(count / 100);
+    if(current >= count){
+        current = count;
+        clearInterval(update);
+    }
+    counter.innerText = current.toLocaleString();
+}, speed);
+</script>
+
+</body>
+</html>
