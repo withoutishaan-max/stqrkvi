@@ -1,1 +1,77 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naman ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- 🎥 Background Video -->
+<video autoplay muted loop playsinline class="bg-video">
+    <source src="levi.mp4" type="video/mp4">
+</video>
+
+<!-- ✨ Intro Screen -->
+<div id="intro">
+    <h1 class="enter-text">ENTER IN HEAVEN</h1>
+</div>
+
+<!-- 🔥 Main Content -->
+<div class="main">
+
+    <div class="pfp-container">
+
+        <!-- 😇 Halo Image -->
+        <img src="hola.png" class="halo" alt="halo">
+
+        <div class="wing left-wing"></div>
+        
+        <img src="levinew.webp" class="pfp" alt="Naman">
+        
+        <div class="wing right-wing"></div>
+
+    </div>
+
+    <h1 class="name">Naman</h1>
+    <p class="tagline">Blessed with vision. Built different.</p>
+
+    <div class="skills">
+        <span>Visionary</span>
+        <span>Creative</span>
+        <span>Divine Energy</span>
+        <span>Chosen One</span>
+    </div>
+
+    <a href="https://instagram.com/wanabenaman" target="_blank" class="insta-btn">
+        <i class="fa-brands fa-instagram"></i> Angel Realm
+    </a>
+
+    <a href="https://discord.gg/minato.irl" target="_blank" class="discord-btn">
+        <i class="fa-brands fa-discord"></i> Angel Nhiris
+    </a>
+
+</div>
+
+<!-- 🎵 Background Music -->
+<audio id="bg-music" loop>
+    <source src="angel-music.m4a.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const intro = document.getElementById("intro");
+const music = document.getElementById("bg-music");
+
+intro.addEventListener("click", () => {
+    intro.classList.add("hide");
+    music.volume = 0.5;
+    music.play();
+});
+</script>
+
+</body>
+</html>
