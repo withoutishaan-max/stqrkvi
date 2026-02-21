@@ -1,1 +1,210 @@
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+/* VIDEO */
+.bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+/* INTRO OVERLAY */
+#intro{
+    position:fixed;
+    inset:0;
+    backdrop-filter:blur(25px);
+    background:rgba(0,0,0,0.75);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:100;
+    cursor:pointer;
+    transition:opacity 0.8s ease;
+}
+
+#intro.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+/* GLOW TEXT */
+.enter-text{
+    font-size:34px;
+    font-weight:bold;
+    letter-spacing:5px;
+    color:white;
+    text-align:center;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.6;}
+}
+
+/* MAIN */
+.main{
+    text-align:center;
+    z-index:5;
+    position:relative;
+}
+
+/* PFP CONTAINER */
+.pfp-container{
+    position:relative;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+/* 😇 HALO IMAGE (hola.png) */
+.halo{
+    position:absolute;
+    top:-75px;
+    width:160px;
+    z-index:3;
+    pointer-events:none;
+    animation: rotateHalo 10s linear infinite,
+               glowHalo 2.5s ease-in-out infinite alternate,
+               floatHalo 4s ease-in-out infinite;
+}
+
+/* Smooth Rotation */
+@keyframes rotateHalo{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+
+/* Glow Pulse */
+@keyframes glowHalo{
+    from{ filter: drop-shadow(0 0 8px white); }
+    to{ filter: drop-shadow(0 0 25px white); }
+}
+
+/* Soft Floating */
+@keyframes floatHalo{
+    0%,100%{ margin-top:0px; }
+    50%{ margin-top:-6px; }
+}
+
+/* PROFILE IMAGE */
+.pfp{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid white;
+    position:relative;
+    z-index:2;
+}
+
+/* WINGS */
+.wing{
+    position:absolute;
+    top:50%;
+    width:180px;
+    height:130px;
+    z-index:1;
+    background-image: url('wings.png');
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
+}
+
+.left-wing{
+    left:-130px;
+    background-position:left center;
+    transform: translateY(-50%) rotate(-10deg);
+    transform-origin:right center;
+    animation: flapLeft 2.2s ease-in-out infinite alternate;
+}
+
+.right-wing{
+    right:-130px;
+    background-position:right center;
+    transform: translateY(-50%) rotate(10deg);
+    transform-origin:left center;
+    animation: flapRight 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes flapLeft{
+    from{ transform: translateY(-50%) rotate(-5deg); }
+    to{ transform: translateY(-50%) rotate(-15deg); }
+}
+
+@keyframes flapRight{
+    from{ transform: translateY(-50%) rotate(5deg); }
+    to{ transform: translateY(-50%) rotate(15deg); }
+}
+
+/* TEXT & BUTTONS */
+.name{ 
+    font-size:30px; 
+    margin-bottom:10px; 
+}
+
+.tagline{ 
+    opacity:0.8; 
+    margin-bottom:20px; 
+}
+
+.skills span{
+    display:inline-block;
+    padding:8px 16px;
+    margin:6px;
+    border-radius:30px;
+    font-size:12px;
+    background:rgba(255,255,255,0.15);
+}
+
+.insta-btn, .discord-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 40px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.insta-btn{ 
+    border:2px solid white; 
+    color:white; 
+}
+
+.insta-btn:hover{ 
+    background:white; 
+    color:black; 
+}
+
+.discord-btn{ 
+    border:2px solid #5865F2; 
+    color:#5865F2; 
+    margin-left:10px; 
+}
+
+.discord-btn:hover{ 
+    background:#5865F2; 
+    color:white; 
+    }
