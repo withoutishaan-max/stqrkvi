@@ -51,7 +51,7 @@ body{
     letter-spacing:5px;
     color:white;
     text-align:center;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+    text-shadow:0 0 10px #fff, 0 0 25px #fff, 0 0 50px #fff;
     animation:pulse 2s infinite;
 }
 
@@ -70,40 +70,20 @@ body{
 /* PFP CONTAINER */
 .pfp-container{
     position:relative;
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
+    display:inline-block;
     margin-bottom:20px;
 }
 
-/* 😇 HALO IMAGE (hola.png) */
-
+/* 😇 HALO (PERFECT ABOVE PFP) */
 .halo{
     position:absolute;
-    top:-60px;        /* adjust if needed */
+    top:-65px;                 /* exact height above head */
     left:50%;
     transform:translateX(-50%);
-    width:160px;
-    z-index:3;
+    width:170px;               /* slightly bigger than pfp */
+    z-index:4;
     pointer-events:none;
-}
-
-/* Smooth Rotation */
-@keyframes rotateHalo{
-    from{ transform: rotate(0deg); }
-    to{ transform: rotate(360deg); }
-}
-
-/* Glow Pulse */
-@keyframes glowHalo{
-    from{ filter: drop-shadow(0 0 8px white); }
-    to{ filter: drop-shadow(0 0 25px white); }
-}
-
-/* Soft Floating */
-@keyframes floatHalo{
-    0%,100%{ margin-top:0px; }
-    50%{ margin-top:-6px; }
+    filter:drop-shadow(0 0 18px rgba(255,255,255,0.9));
 }
 
 /* PROFILE IMAGE */
@@ -114,7 +94,7 @@ body{
     object-fit:cover;
     border:3px solid white;
     position:relative;
-    z-index:2;
+    z-index:3;
 }
 
 /* WINGS */
@@ -123,49 +103,49 @@ body{
     top:50%;
     width:180px;
     height:130px;
-    z-index:1;
-    background-image: url('wings.png');
-    background-size: 200% 100%;
-    background-repeat: no-repeat;
-    pointer-events: none;
-    filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
+    z-index:2;
+    background-image:url('wings.png');
+    background-size:200% 100%;
+    background-repeat:no-repeat;
+    pointer-events:none;
+    filter:drop-shadow(0 0 10px rgba(255,255,255,0.6));
 }
 
 .left-wing{
     left:-130px;
     background-position:left center;
-    transform: translateY(-50%) rotate(-10deg);
+    transform:translateY(-50%) rotate(-10deg);
     transform-origin:right center;
-    animation: flapLeft 2.2s ease-in-out infinite alternate;
+    animation:flapLeft 2.2s ease-in-out infinite alternate;
 }
 
 .right-wing{
     right:-130px;
     background-position:right center;
-    transform: translateY(-50%) rotate(10deg);
+    transform:translateY(-50%) rotate(10deg);
     transform-origin:left center;
-    animation: flapRight 2.2s ease-in-out infinite alternate;
+    animation:flapRight 2.2s ease-in-out infinite alternate;
 }
 
 @keyframes flapLeft{
-    from{ transform: translateY(-50%) rotate(-5deg); }
-    to{ transform: translateY(-50%) rotate(-15deg); }
+    from{ transform:translateY(-50%) rotate(-6deg); }
+    to{ transform:translateY(-50%) rotate(-16deg); }
 }
 
 @keyframes flapRight{
-    from{ transform: translateY(-50%) rotate(5deg); }
-    to{ transform: translateY(-50%) rotate(15deg); }
+    from{ transform:translateY(-50%) rotate(6deg); }
+    to{ transform:translateY(-50%) rotate(16deg); }
 }
 
-/* TEXT & BUTTONS */
-.name{ 
-    font-size:30px; 
-    margin-bottom:10px; 
+/* TEXT */
+.name{
+    font-size:30px;
+    margin-bottom:10px;
 }
 
-.tagline{ 
-    opacity:0.8; 
-    margin-bottom:20px; 
+.tagline{
+    opacity:0.85;
+    margin-bottom:20px;
 }
 
 .skills span{
@@ -175,8 +155,10 @@ body{
     border-radius:30px;
     font-size:12px;
     background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(6px);
 }
 
+/* BUTTONS */
 .insta-btn, .discord-btn{
     display:inline-block;
     margin-top:20px;
@@ -187,23 +169,23 @@ body{
     transition:0.3s;
 }
 
-.insta-btn{ 
-    border:2px solid white; 
-    color:white; 
+.insta-btn{
+    border:2px solid white;
+    color:white;
 }
 
-.insta-btn:hover{ 
-    background:white; 
-    color:black; 
+.insta-btn:hover{
+    background:white;
+    color:black;
 }
 
-.discord-btn{ 
-    border:2px solid #5865F2; 
-    color:#5865F2; 
-    margin-left:10px; 
+.discord-btn{
+    border:2px solid #5865F2;
+    color:#5865F2;
+    margin-left:10px;
 }
 
-.discord-btn:hover{ 
-    background:#5865F2; 
-    color:white; 
-    }
+.discord-btn:hover{
+    background:#5865F2;
+    color:white;
+}
