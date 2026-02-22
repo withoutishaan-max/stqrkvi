@@ -77,15 +77,15 @@ body{
 }
 
 /* 😇 HALO IMAGE (hola.png) */
+
 .halo{
     position:absolute;
-    top:-75px;
+    top:-60px;        /* adjust if needed */
+    left:50%;
+    transform:translateX(-50%);
     width:160px;
     z-index:3;
     pointer-events:none;
-    animation: rotateHalo 10s linear infinite,
-               glowHalo 2.5s ease-in-out infinite alternate,
-               floatHalo 4s ease-in-out infinite;
 }
 
 /* Smooth Rotation */
