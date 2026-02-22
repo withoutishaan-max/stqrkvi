@@ -11,33 +11,36 @@
 
 <body>
 
-<!-- INTRO SCREEN -->
-<div class="intro" id="intro">
-    <h1 id="intro-text">Click to enter</h1>
+<!-- ================= GATE SCREEN ================= -->
+<div class="gate" id="gate">
+    <div class="gate-box">
+        <h2>Show your intelligence to enter</h2>
+        <p id="question"></p>
+        <input type="number" id="answer" placeholder="Enter answer">
+        <button onclick="checkAnswer()">Enter</button>
+        <p class="error" id="error"></p>
+    </div>
 </div>
 
-<!-- Background Video -->
+<!-- ================= MAIN WEBSITE ================= -->
+
 <video autoplay muted loop playsinline>
     <source src="newbg.mp4" type="video/mp4">
 </video>
 
-<div class="overlay" id="blurOverlay"></div>
+<div class="overlay"></div>
 
-<!-- MUSIC -->
 <audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Banner -->
 <div class="banner"></div>
 
-<!-- Profile Section -->
 <div class="profile">
     <img src="psp.jpg" alt="Profile Picture">
     <h1>NIKOLA</h1>
 </div>
 
-<!-- Quote Section -->
 <div class="quote">
     <h2>
         Be a man of your word, whatever you say you might follow it.
@@ -47,20 +50,17 @@
     </p>
 </div>
 
-<!-- Contact Line -->
 <div class="contact-line">
     <p>
         Open for advice, collaborations & business inquiries — connect with me through my socials below.
     </p>
 </div>
 
-<!-- Instagram Counter -->
 <div class="insta-counter">
     <h3>Instagram Followers</h3>
     <p><span id="followers">0</span>+</p>
 </div>
 
-<!-- Social Links -->
 <div class="socials">
     <a href="https://www.instagram.com/yourzz_himanshu/" target="_blank">Instagram</a>
     <a href="https://discord.com/users/1400824591496253460" target="_blank">Discord</a>
@@ -73,6 +73,26 @@
 </footer>
 
 <script>
+
+/* RANDOM MATH QUESTION */
+let num1 = Math.floor(Math.random() * 15) + 5;
+let num2 = Math.floor(Math.random() * 10) + 2;
+let correctAnswer = num1 + num2;   // simple addition (clean & fast)
+
+document.getElementById("question").innerText = `${num1} + ${num2} = ?`;
+
+function checkAnswer(){
+    let userAnswer = document.getElementById("answer").value;
+    let error = document.getElementById("error");
+
+    if(parseInt(userAnswer) === correctAnswer){
+        document.getElementById("gate").style.display = "none";
+        document.getElementById("bgMusic").play();
+    } else {
+        error.innerText = "Wrong answer. Try again.";
+    }
+}
+
 
 /* FOLLOWER COUNTER */
 let count = 74;
@@ -89,53 +109,6 @@ let update = setInterval(() => {
     counter.innerText = current.toLocaleString();
 }, speed);
 
-
-/* INTELLIGENT CLICK TO ENTER */
-
-const intro = document.getElementById("intro");
-const introText = document.getElementById("intro-text");
-const blurOverlay = document.getElementById("blurOverlay");
-const music = document.getElementById("bgMusic");
-
-let num1 = Math.floor(Math.random()*10)+5;
-let num2 = Math.floor(Math.random()*10)+3;
-let correctAnswer = num1 * num2;
-
-intro.addEventListener("click", function(){
-
-    // First click = show question
-    if(introText.innerText === "Click to enter"){
-        introText.innerHTML = `${num1} × ${num2} = ?<br><small>Type answer & press Enter</small>`;
-        
-        let input = document.createElement("input");
-        input.type = "number";
-        input.className = "math-input";
-        input.id = "mathAnswer";
-        intro.appendChild(input);
-        input.focus();
-
-        input.addEventListener("keydown", function(e){
-            if(e.key === "Enter"){
-                if(parseInt(input.value) === correctAnswer){
-                    
-                    // Correct answer
-                    intro.style.opacity = "0";
-                    blurOverlay.style.backdropFilter = "blur(0px)";
-                    blurOverlay.style.background = "rgba(0,0,0,0.4)";
-                    music.play();
-
-                    setTimeout(()=>{
-                        intro.style.display = "none";
-                    },800);
-
-                } else {
-                    input.value = "";
-                    input.placeholder = "Wrong. Try again.";
-                }
-            }
-        });
-    }
-});
 </script>
 
 </body>
