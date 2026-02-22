@@ -168,3 +168,70 @@ footer{
     opacity:0.6;
     font-size:14px;
 }
+/* ============================= */
+/* MOBILE PERFECT OPTIMIZATION */
+/* ============================= */
+
+@media (max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .banner{
+        height:180px;
+    }
+
+    .profile{
+        margin-top:-60px;
+    }
+
+    .profile img{
+        width:120px;
+        height:120px;
+    }
+
+    .profile h1{
+        font-size:22px;
+    }
+
+    .quote{
+        margin:25px auto;
+        padding:0 15px;
+    }
+
+    .quote h2{
+        font-size:20px;
+        line-height:1.4;
+    }
+
+    .quote p{
+        font-size:15px;
+        line-height:1.5;
+    }
+
+    .contact-line{
+        font-size:14px;
+        padding:0 15px;
+    }
+
+    .insta-counter p{
+        font-size:22px;
+        padding:8px 18px;
+    }
+
+    .socials{
+        gap:12px;
+    }
+
+    .socials a{
+        padding:8px 18px;
+        font-size:14px;
+    }
+
+    footer{
+        font-size:12px;
+        padding:15px;
+    }
+
+}
