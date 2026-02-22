@@ -1,4 +1,3 @@
-
 *{
     margin:0;
     padding:0;
@@ -30,6 +29,81 @@ video{
     background:rgba(0,0,0,0.65);
     backdrop-filter:blur(6px);
     z-index:-1;
+}
+
+/* INTELLIGENT GATE */
+.gate{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    backdrop-filter:blur(12px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.gate-box{
+    text-align:center;
+    padding:40px;
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 40px rgba(255,255,255,0.2);
+}
+
+.gate-box h1{
+    font-size:28px;
+    margin-bottom:20px;
+    text-shadow:0 0 20px white;
+}
+
+.gate-box p{
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.gate-box input{
+    padding:10px 15px;
+    border-radius:30px;
+    border:none;
+    outline:none;
+    text-align:center;
+    margin-bottom:15px;
+    width:200px;
+}
+
+.gate-box button{
+    padding:10px 25px;
+    border-radius:30px;
+    border:none;
+    background:white;
+    color:black;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.gate-box button:hover{
+    transform:scale(1.1);
+}
+
+.error{
+    color:#ff4d4d;
+    margin-top:10px;
+}
+
+/* SHAKE EFFECT */
+@keyframes shake{
+    0%{transform:translateX(0);}
+    25%{transform:translateX(-5px);}
+    50%{transform:translateX(5px);}
+    75%{transform:translateX(-5px);}
+    100%{transform:translateX(0);}
+}
+
+.shake{
+    animation:shake 0.3s;
 }
 
 /* BANNER */
@@ -94,12 +168,6 @@ video{
     margin:30px auto;
 }
 
-.insta-counter h3{
-    font-weight:500;
-    margin-bottom:10px;
-    letter-spacing:1px;
-}
-
 .insta-counter p{
     font-size:32px;
     font-weight:600;
@@ -136,27 +204,9 @@ video{
     transform:scale(1.05);
 }
 
-/* FOOTER */
 footer{
     text-align:center;
     padding:20px;
     opacity:0.6;
     font-size:14px;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-    .banner{
-        height:200px;
-    }
-    .profile img{
-        width:120px;
-        height:120px;
-    }
-    .quote h2{
-        font-size:20px;
-    }
-    .insta-counter p{
-        font-size:24px;
-    }
 }
