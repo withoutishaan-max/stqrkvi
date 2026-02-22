@@ -11,15 +11,9 @@
 
 <body>
 
-<!-- INTELLIGENT GATE -->
-<div class="gate" id="gate">
-    <div class="gate-box">
-        <h1>Prove Your Intelligence</h1>
-        <p id="question"></p>
-        <input type="number" id="answer" placeholder="Enter your answer">
-        <button onclick="checkAnswer()">Unlock</button>
-        <p class="error" id="error"></p>
-    </div>
+<!-- INTRO SCREEN -->
+<div class="intro" id="intro">
+    <h1 id="intro-text">Click to enter</h1>
 </div>
 
 <!-- Background Video -->
@@ -27,7 +21,12 @@
     <source src="newbg.mp4" type="video/mp4">
 </video>
 
-<div class="overlay"></div>
+<div class="overlay" id="blurOverlay"></div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <!-- Banner -->
 <div class="banner"></div>
@@ -91,33 +90,52 @@ let update = setInterval(() => {
 }, speed);
 
 
-/* INTELLIGENT GATE SYSTEM */
+/* INTELLIGENT CLICK TO ENTER */
 
-let num1 = Math.floor(Math.random() * 20) + 5;
-let num2 = Math.floor(Math.random() * 15) + 3;
+const intro = document.getElementById("intro");
+const introText = document.getElementById("intro-text");
+const blurOverlay = document.getElementById("blurOverlay");
+const music = document.getElementById("bgMusic");
+
+let num1 = Math.floor(Math.random()*10)+5;
+let num2 = Math.floor(Math.random()*10)+3;
 let correctAnswer = num1 * num2;
 
-document.getElementById("question").innerText = `${num1} × ${num2} = ?`;
+intro.addEventListener("click", function(){
 
-function checkAnswer(){
-    let userAnswer = document.getElementById("answer").value;
-    let error = document.getElementById("error");
+    // First click = show question
+    if(introText.innerText === "Click to enter"){
+        introText.innerHTML = `${num1} × ${num2} = ?<br><small>Type answer & press Enter</small>`;
+        
+        let input = document.createElement("input");
+        input.type = "number";
+        input.className = "math-input";
+        input.id = "mathAnswer";
+        intro.appendChild(input);
+        input.focus();
 
-    if(parseInt(userAnswer) === correctAnswer){
-        document.getElementById("gate").style.opacity = "0";
-        document.getElementById("gate").style.transition = "1s ease";
-        setTimeout(() => {
-            document.getElementById("gate").style.display = "none";
-        },1000);
-    } else {
-        error.innerText = "Wrong Answer. Try Again.";
-        document.querySelector(".gate-box").classList.add("shake");
-        setTimeout(() => {
-            document.querySelector(".gate-box").classList.remove("shake");
-        },500);
+        input.addEventListener("keydown", function(e){
+            if(e.key === "Enter"){
+                if(parseInt(input.value) === correctAnswer){
+                    
+                    // Correct answer
+                    intro.style.opacity = "0";
+                    blurOverlay.style.backdropFilter = "blur(0px)";
+                    blurOverlay.style.background = "rgba(0,0,0,0.4)";
+                    music.play();
+
+                    setTimeout(()=>{
+                        intro.style.display = "none";
+                    },800);
+
+                } else {
+                    input.value = "";
+                    input.placeholder = "Wrong. Try again.";
+                }
+            }
+        });
     }
-}
-
+});
 </script>
 
 </body>
