@@ -6,42 +6,12 @@
 }
 
 body {
-  background: #050505;
+  background: #0a0a0a;
   color: #fff;
-  overflow-x: hidden;
-  position: relative;
+  line-height: 1.6;
 }
 
-/* 🔴 RED GRID BACKGROUND */
-body::after {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-
-  background-image:
-    linear-gradient(rgba(255, 0, 0, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 0, 0, 0.08) 1px, transparent 1px);
-
-  background-size: 50px 50px;
-  z-index: -2;
-  pointer-events: none;
-}
-
-/* 🔥 RED GLOW EFFECT */
-body::before {
-  content: "";
-  position: fixed;
-  width: 900px;
-  height: 900px;
-  background: radial-gradient(circle, rgba(255, 0, 0, 0.25), transparent 70%);
-  top: -300px;
-  left: -300px;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* NAVBAR */
+/* NAV */
 header {
   display: flex;
   justify-content: space-between;
@@ -51,131 +21,80 @@ header {
 
 .logo {
   font-weight: 600;
-  letter-spacing: 1px;
 }
 
 nav a {
   margin-left: 25px;
   text-decoration: none;
   color: #aaa;
-  font-size: 14px;
-  transition: 0.3s;
 }
 
 nav a:hover {
-  color: #fff;
+  color: white;
 }
 
 /* HERO */
 .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 100px 60px;
+  text-align: center;
+  padding: 120px 20px;
 }
 
-.hero-left {
-  max-width: 500px;
-}
-
-.badge {
-  font-size: 12px;
-  color: #888;
-  display: inline-block;
-  margin-bottom: 15px;
-}
-
-/* 🔥 GRADIENT TEXT LIKE PLUTOTECH */
 .hero h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.2;
-
-  background: linear-gradient(90deg, #ff2a2a, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero h1 span {
-  color: #bbb;
+  font-size: 2.8rem;
+  max-width: 700px;
+  margin: auto;
 }
 
 .hero p {
-  margin: 20px 0;
+  margin: 15px 0;
   color: #aaa;
 }
 
-/* BUTTONS */
 .btn {
-  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: white;
+  color: black;
   text-decoration: none;
   border-radius: 6px;
-  margin-right: 10px;
-  font-size: 14px;
-  transition: 0.3s;
 }
 
-.primary {
-  background: linear-gradient(90deg, #ff2a2a, #ff0000);
-  color: white;
+/* SECTION */
+.section {
+  padding: 80px 60px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-.primary:hover {
-  opacity: 0.85;
+.section h2 {
+  margin-bottom: 20px;
 }
 
-.secondary {
-  border: 1px solid #333;
-  color: white;
-}
-
-.secondary:hover {
-  border-color: #ff2a2a;
-}
-
-/* RIGHT CARDS */
-.hero-right {
+/* GRID */
+.grid {
   display: grid;
-  grid-template-columns: repeat(2, 120px);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
 
 .card {
-  background: #0d0d0d;
-  padding: 30px;
+  background: #111;
+  padding: 25px;
+  border-radius: 8px;
   text-align: center;
-  border-radius: 12px;
-  border: 1px solid #111;
-  transition: 0.3s;
-}
-
-.card:hover {
-  border-color: #ff2a2a;
-  transform: translateY(-6px);
 }
 
 /* PROJECTS */
-.section {
-  padding: 80px 60px;
-}
-
-.projects-grid {
+.projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
 .project {
-  background: #0d0d0d;
+  background: #111;
   padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #111;
-  transition: 0.3s;
-}
-
-.project:hover {
-  border-color: #ff2a2a;
-  transform: translateY(-5px);
+  border-radius: 8px;
 }
 
 .project p {
