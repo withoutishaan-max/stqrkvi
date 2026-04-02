@@ -12,15 +12,15 @@ body {
   position: relative;
 }
 
-/* 🔴 PLUTOTECH STYLE GRID */
+/* ⚪ WHITE GRID (SUBTLE) */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
 
   background-image:
-    linear-gradient(rgba(255, 0, 0, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 0, 0, 0.12) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 
   background-size: 60px 60px;
 
@@ -28,38 +28,51 @@ body::after {
   pointer-events: none;
 }
 
-/* NAV */
+/* 🧭 HEADER (PLUTOTECH STYLE) */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 20px 60px;
+  align-items: center;
+  padding: 20px 80px;
   border-bottom: 1px solid #111;
 }
 
 .logo {
   font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* NAV LINKS */
+nav {
+  display: flex;
+  gap: 30px;
 }
 
 nav a {
-  margin-left: 25px;
   text-decoration: none;
-  color: #aaa;
+  color: #888;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  color: white;
+  color: #fff;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 120px 20px;
+  padding: 140px 20px;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
-  max-width: 700px;
+  font-size: 3rem;
+  max-width: 800px;
   margin: auto;
+  font-weight: 700;
 }
 
 .hero p {
@@ -67,19 +80,26 @@ nav a:hover {
   color: #aaa;
 }
 
+/* BUTTON */
 .btn {
   display: inline-block;
-  margin-top: 15px;
-  padding: 12px 25px;
-  background: white;
-  color: black;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #fff;
+  color: #000;
   text-decoration: none;
   border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.8;
 }
 
 /* SECTION */
 .section {
-  padding: 80px 60px;
+  padding: 80px 80px;
   max-width: 1000px;
   margin: auto;
 }
@@ -100,6 +120,7 @@ nav a:hover {
   padding: 25px;
   border-radius: 8px;
   text-align: center;
+  border: 1px solid #1a1a1a;
 }
 
 /* PROJECTS */
@@ -112,6 +133,7 @@ nav a:hover {
   background: #111;
   padding: 20px;
   border-radius: 8px;
+  border: 1px solid #1a1a1a;
 }
 
 .project p {
