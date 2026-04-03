@@ -1,39 +1,140 @@
-html {
-  scroll-behavior: smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-/* BUTTON FIX */
-.primary, .secondary, .contact-btns a {
-  display: inline-block;
+body {
+  background: #0a0a0a;
+  color: #fff;
+}
+
+/* NAV */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  position: fixed;
+  width: 100%;
+  background: rgba(10,10,10,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.logo span {
+  color: #4facfe;
+}
+
+nav a {
+  margin-left: 20px;
+  color: #aaa;
   text-decoration: none;
-  cursor: pointer;
 }
 
-/* HERO BUTTONS */
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  background: radial-gradient(circle at top, #111, #000);
+}
+
+.hero h1 {
+  font-size: 60px;
+  max-width: 700px;
+}
+
+.hero p {
+  margin: 20px 0;
+  color: #aaa;
+}
+
+/* BUTTONS */
 .primary {
-  background: red;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
   padding: 12px 25px;
+  border-radius: 30px;
   color: white;
-  border-radius: 8px;
+  text-decoration: none;
 }
 
 .secondary {
   border: 1px solid #444;
   padding: 12px 25px;
-  color: white;
+  border-radius: 30px;
   margin-left: 10px;
+  color: white;
+  text-decoration: none;
 }
 
-/* CONTACT BUTTONS */
-.contact-btns a {
-  margin: 10px;
-  padding: 12px 25px;
+/* SECTIONS */
+section {
+  padding: 120px 60px;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+/* WORK */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 30px;
+}
+
+.card {
+  padding: 40px;
+  border-radius: 20px;
   background: #111;
-  border-radius: 10px;
-  color: white;
+  border: 1px solid #222;
   transition: 0.3s;
 }
 
-.contact-btns a:hover {
-  background: red;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(79,172,254,0.2);
+}
+
+/* SKILLS */
+.skills-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.skills-grid div {
+  padding: 15px 25px;
+  border-radius: 20px;
+  background: #111;
+  border: 1px solid #222;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+.contact-buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: #111;
+  border: 1px solid #222;
+  color: white;
+  text-decoration: none;
+}
+
+.contact-buttons a:hover {
+  background: #4facfe;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #777;
 }
