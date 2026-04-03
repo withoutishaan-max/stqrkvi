@@ -69,7 +69,6 @@ nav a:hover{
   gap:60px;
 }
 
-/* LEFT */
 .badge{
   border:1px solid #ff3b3b;
   padding:6px 14px;
@@ -147,7 +146,7 @@ nav a:hover{
 
 /* SECTIONS */
 section{
-  padding:100px 60px;
+  padding:120px 60px;
   animation:fadeUp 1s ease;
 }
 
@@ -158,7 +157,8 @@ section{
 
 h2{
   text-align:center;
-  margin-bottom:40px;
+  margin-bottom:60px;
+  font-size:42px;
 }
 
 /* SERVICES */
@@ -181,20 +181,23 @@ h2{
   box-shadow:0 0 30px rgba(255,0,0,0.3);
 }
 
-/* TEAM */
+/* ================= TEAM FINAL ================= */
+
 .team-grid{
   display:flex;
   justify-content:center;
-  gap:40px;
+  gap:80px;
   flex-wrap:wrap;
 }
 
 .member{
-  border:1px solid rgba(255,0,0,0.2);
-  padding:30px;
+  width:260px;
+  padding:40px 30px;
   border-radius:20px;
+  border:1px solid rgba(255,0,0,0.2);
   text-align:center;
   transition:0.3s;
+  background:rgba(255,0,0,0.02);
 }
 
 .member:hover{
@@ -202,30 +205,50 @@ h2{
   box-shadow:0 0 30px rgba(255,0,0,0.3);
 }
 
-/* IMAGE FIX (IMPORTANT) */
 .member img{
-  width:100px;
-  height:100px;
+  width:110px;
+  height:110px;
   object-fit:cover;
   border-radius:50%;
   border:2px solid #ff3b3b;
-  transition:0.3s;
+  margin-bottom:15px;
 }
 
-.member img:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px rgba(255,0,0,0.5);
+.member h3{
+  font-size:18px;
+  margin:10px 0 5px;
 }
 
-/* ICONS */
-.icons i{
-  margin:5px;
+.member p{
+  font-size:13px;
   color:#ff3b3b;
+  margin-bottom:15px;
+}
+
+/* ICON BUTTON STYLE */
+.icons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+
+.icons a{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border:1px solid rgba(255,0,0,0.3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#ff3b3b;
+  text-decoration:none;
   transition:0.3s;
 }
 
-.icons i:hover{
-  transform:scale(1.2);
+.icons a:hover{
+  background:#ff3b3b;
+  color:white;
+  box-shadow:0 0 15px rgba(255,0,0,0.5);
 }
 
 /* CONTACT */
@@ -258,7 +281,7 @@ footer{
   opacity:0.6;
 }
 
-/* MOBILE */
+/* MOBILE PERFECT */
 @media(max-width:900px){
 
   header{
@@ -282,21 +305,16 @@ footer{
     font-size:34px;
   }
 
-  .hero-left p{
-    font-size:14px;
-  }
-
   .hero-right{
     grid-template-columns:1fr;
   }
 
-  .card{
-    width:100%;
+  h2{
+    font-size:28px;
   }
 
   .team-grid{
-    flex-direction:column;
-    align-items:center;
+    gap:30px;
   }
 
   .member{
@@ -304,8 +322,8 @@ footer{
   }
 
   .member img{
-    width:80px;
-    height:80px;
+    width:90px;
+    height:90px;
   }
 
   .grid{
@@ -320,10 +338,9 @@ footer{
 
   .contact-btns a{
     width:80%;
-    text-align:center;
   }
 
   section{
-    padding:70px 20px;
+    padding:80px 20px;
   }
 }
