@@ -15,7 +15,7 @@ body{
   overflow-x:hidden;
 }
 
-/* GRID */
+/* GRID BACKGROUND */
 body::before{
   content:"";
   position:fixed;
@@ -47,6 +47,11 @@ nav a{
   margin-left:20px;
   text-decoration:none;
   color:#aaa;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#ff3b3b;
 }
 
 /* HERO */
@@ -64,6 +69,7 @@ nav a{
   gap:60px;
 }
 
+/* LEFT */
 .badge{
   border:1px solid #ff3b3b;
   padding:6px 14px;
@@ -93,6 +99,11 @@ nav a{
   border-radius:10px;
   color:white;
   text-decoration:none;
+  transition:0.3s;
+}
+
+.primary:hover{
+  box-shadow:0 0 20px rgba(255,0,0,0.5);
 }
 
 .secondary{
@@ -102,9 +113,14 @@ nav a{
   margin-left:10px;
   color:white;
   text-decoration:none;
+  transition:0.3s;
 }
 
-/* HERO CARDS */
+.secondary:hover{
+  border-color:#ff3b3b;
+}
+
+/* HERO RIGHT */
 .hero-right{
   display:grid;
   grid-template-columns:repeat(2,160px);
@@ -186,12 +202,19 @@ h2{
   box-shadow:0 0 30px rgba(255,0,0,0.3);
 }
 
+/* IMAGE FIX (IMPORTANT) */
 .member img{
-  width:90px;
-  height:90px;
+  width:100px;
+  height:100px;
   object-fit:cover;
   border-radius:50%;
   border:2px solid #ff3b3b;
+  transition:0.3s;
+}
+
+.member img:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px rgba(255,0,0,0.5);
 }
 
 /* ICONS */
@@ -210,6 +233,10 @@ h2{
   text-align:center;
 }
 
+.contact-btns{
+  margin-top:20px;
+}
+
 .contact-btns a{
   margin:10px;
   padding:12px 25px;
@@ -217,6 +244,11 @@ h2{
   border-radius:10px;
   color:white;
   text-decoration:none;
+  transition:0.3s;
+}
+
+.contact-btns a:hover{
+  background:#ff3b3b;
 }
 
 /* FOOTER */
@@ -226,7 +258,7 @@ footer{
   opacity:0.6;
 }
 
-/* MOBILE FIX */
+/* MOBILE */
 @media(max-width:900px){
 
   header{
@@ -250,8 +282,16 @@ footer{
     font-size:34px;
   }
 
+  .hero-left p{
+    font-size:14px;
+  }
+
   .hero-right{
     grid-template-columns:1fr;
+  }
+
+  .card{
+    width:100%;
   }
 
   .team-grid{
@@ -263,8 +303,24 @@ footer{
     width:90%;
   }
 
+  .member img{
+    width:80px;
+    height:80px;
+  }
+
   .grid{
     grid-template-columns:1fr;
+  }
+
+  .contact-btns{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .contact-btns a{
+    width:80%;
+    text-align:center;
   }
 
   section{
