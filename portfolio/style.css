@@ -12,9 +12,10 @@ html{
 body{
   background:#0b0000;
   color:#fff;
+  overflow-x:hidden;
 }
 
-/* GRID BACKGROUND */
+/* GRID */
 body::before{
   content:"";
   position:fixed;
@@ -63,7 +64,6 @@ nav a{
   gap:60px;
 }
 
-/* LEFT */
 .badge{
   border:1px solid #ff3b3b;
   padding:6px 14px;
@@ -78,13 +78,8 @@ nav a{
   line-height:1;
 }
 
-.red{
-  color:#ff3b3b;
-}
-
-.white{
-  color:#ddd;
-}
+.red{color:#ff3b3b;}
+.white{color:#ddd;}
 
 .hero-left p{
   margin:20px 0;
@@ -109,7 +104,7 @@ nav a{
   text-decoration:none;
 }
 
-/* RIGHT */
+/* HERO CARDS */
 .hero-right{
   display:grid;
   grid-template-columns:repeat(2,160px);
@@ -123,19 +118,26 @@ nav a{
   display:flex;
   align-items:center;
   justify-content:center;
+  font-size:28px;
   color:#ff3b3b;
   background:rgba(255,0,0,0.03);
-  transition:0.3s;
+  transition:0.4s;
 }
 
 .card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 0 30px rgba(255,0,0,0.3);
+  transform:translateY(-10px);
+  box-shadow:0 0 40px rgba(255,0,0,0.4);
 }
 
 /* SECTIONS */
 section{
   padding:100px 60px;
+  animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 h2{
@@ -155,6 +157,12 @@ h2{
   padding:40px;
   border-radius:20px;
   text-align:center;
+  transition:0.3s;
+}
+
+.box:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 30px rgba(255,0,0,0.3);
 }
 
 /* TEAM */
@@ -170,10 +178,31 @@ h2{
   padding:30px;
   border-radius:20px;
   text-align:center;
+  transition:0.3s;
+}
+
+.member:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 30px rgba(255,0,0,0.3);
 }
 
 .member img{
+  width:90px;
+  height:90px;
+  object-fit:cover;
   border-radius:50%;
+  border:2px solid #ff3b3b;
+}
+
+/* ICONS */
+.icons i{
+  margin:5px;
+  color:#ff3b3b;
+  transition:0.3s;
+}
+
+.icons i:hover{
+  transform:scale(1.2);
 }
 
 /* CONTACT */
@@ -197,11 +226,19 @@ footer{
   opacity:0.6;
 }
 
-/* MOBILE */
+/* MOBILE FIX */
 @media(max-width:900px){
 
+  header{
+    padding:15px 20px;
+  }
+
+  nav{
+    display:none;
+  }
+
   .hero{
-    padding:100px 20px;
+    padding:120px 20px;
   }
 
   .hero-container{
@@ -210,15 +247,27 @@ footer{
   }
 
   .hero-left h1{
-    font-size:42px;
+    font-size:34px;
   }
 
   .hero-right{
     grid-template-columns:1fr;
   }
 
-  section{
-    padding:80px 20px;
+  .team-grid{
+    flex-direction:column;
+    align-items:center;
   }
 
+  .member{
+    width:90%;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:70px 20px;
+  }
 }
